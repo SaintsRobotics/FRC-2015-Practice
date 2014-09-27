@@ -7,6 +7,10 @@ public class Drive implements RobotComponent {
 
     public XboxController controller;
     public WoodchuckDrive drive;
+    
+    boolean tankDrive = true;
+    boolean heldLastTime = false;
+    
     public void init() {
         controller = new XboxController();
         drive = new WoodchuckDrive();
@@ -14,20 +18,27 @@ public class Drive implements RobotComponent {
     }
 
     public void teleop() {
-        double leftStickX = controller.getAxis(XboxController.LEFT_X);
         double leftStickY = controller.getAxis(XboxController.LEFT_Y);
         double rightStickX = controller.getAxis(XboxController.RIGHT_X);
         double rightStickY = controller.getAxis(XboxController.RIGHT_Y);
         
-        //tankDrive
-        //drive.setLeft(leftStickY);
-        //drive.setRight(rightStickY);
+        boolean held = controller.getButton(XboxController.Y);
         
-        //arcadeDrive
-        drive.setLeft(leftStickY + rightStickX);
-        drive.setRight(leftStickY - rightStickX);
-    
+        if (held && !heldLastTime) {
+            tankDrive = !tankDrive;
+        }
+        
+        if (tankDrive) {
+            drive.setLeft(leftStickY);
+            drive.setRight(rightStickY);
+        } else {
+            drive.setLeft(leftStickY + rightStickX);
+            drive.setRight(leftStickY - rightStickX);
+        }
+        
+        heldLastTime = held;
     }
+    
     public void auton() {
     }
 
