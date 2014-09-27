@@ -25,10 +25,22 @@ public class WoodchuckDrive extends RobotDrive {
     }
     
     public void setRight(double val) {
+        if(val > 1){
+            val = 1;
+        }
+        if(val < -1){
+            val = -1;
+        }
         motorRight.set(val);
     }
     
     public void setLeft(double val) {
+        if(val > 1){
+            val = 1;
+        }
+        if(val < -1){
+            val = -1;
+        }
         motorLeft.set(-val);
     }
 }
