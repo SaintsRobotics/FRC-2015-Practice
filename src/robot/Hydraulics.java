@@ -8,20 +8,18 @@ public class Hydraulics implements RobotComponent {
 
     private XboxController controller;
     private SpeedController motor1;
-    private SpeedController motor2;
     private double value;
 
     public void init() {
         controller = new XboxController(1);
-        motor1 = new Jaguar(1);
-        motor2 = new Jaguar(2);
+        motor1 = new Jaguar(5);
     }
 
     public void teleop() {
 //        if (controller.getButton(XboxController.X)) {
 //            motor1.set(XboxController.X);
 //        }
-        motor1.set(controller.getAxis(XboxController.TRIGGERS));
+        motor1.set((controller.getAxis(XboxController.TRIGGERS))/2-1);
         
     }
 
