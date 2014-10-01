@@ -16,11 +16,11 @@ public class Hydraulics implements RobotComponent {
     }
 
     public void teleop() {
-//        if (controller.getButton(XboxController.X)) {
-//            motor1.set(XboxController.X);
-//        }
-        motor1.set((controller.getAxis(XboxController.TRIGGERS))/2-1);
-        
+        if(controller.getButton(XboxController.X)) {
+            motor1.set(0);
+        } else {
+            motor1.set(controller.getAxis(XboxController.TRIGGERS)/4);
+        }
     }
 
     public void auton() {
