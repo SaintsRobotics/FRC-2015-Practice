@@ -43,4 +43,8 @@ public class WoodchuckDrive extends RobotDrive {
         }
         motorLeft.set(-val);
     }
+    public void setBoth(double left, double right){
+        this.setLeft(left);
+        this.setRight(right);
+    }
 }

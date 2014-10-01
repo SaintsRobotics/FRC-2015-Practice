@@ -1,5 +1,6 @@
 package robot;
 
+import edu.wpi.first.wpilibj.Timer;
 import robot.util.control.XboxController;
 import robot.util.drive.WoodchuckDrive;
 
@@ -40,6 +41,9 @@ public class Drive implements RobotComponent {
     }
     
     public void auton() {
+        drive.setBoth(1, 1);
+        Timer.delay(1);
+        drive.setBoth(0,0);
     }
 
     public void test() {
