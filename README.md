@@ -1,4 +1,5 @@
-FRC-Wrappers
+2015-Practice
 ============
-
-Documented easy-to-use wrappers around FRC Java library classes.
+If you are getting started, the tutorial link is below:
+http://1899basicstutorial.weebly.com/
+Links to the plugins are also in there.
