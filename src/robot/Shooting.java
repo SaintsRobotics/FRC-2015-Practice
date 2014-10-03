@@ -25,8 +25,13 @@ public class Shooting {
         flyWheel.set(0);
     }
     
-    public boolean shoot() {
+    public void startShoot() {
         arm.set(Relay.Value.kForward);
-        
+    }
+    public boolean shouldStopshoot(){
+        return tripWire.get();
+    }
+    public void endShoot() {
+        arm.set(Relay.Value.kOff);
     }
 }
