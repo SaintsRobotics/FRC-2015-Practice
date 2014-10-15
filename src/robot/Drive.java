@@ -39,6 +39,7 @@ public class Drive implements RobotComponent {
                 drive.setBoth(leftStickY + rightStickX, leftStickY - rightStickX);
                 break;
             case 2:
+                betterArcadeDrive(leftStickY, rightStickX, leftTrigger);
                 
         }
         
