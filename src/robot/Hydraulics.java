@@ -12,7 +12,7 @@ public class Hydraulics implements RobotComponent {
 
     public void init() {
         controller = new XboxController(1);
-        motor1 = new Jaguar(5);
+        motor1 = new Jaguar(6);
     }
 
     public void teleop() {
