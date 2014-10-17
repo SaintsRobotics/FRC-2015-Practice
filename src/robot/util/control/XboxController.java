@@ -70,7 +70,7 @@ public class XboxController {
      * @param port The port to create the controller on.
      */
     public XboxController(int port) {
-        joystick = new Joystick(1);
+        joystick = new Joystick(port);
     }
     
     /**
